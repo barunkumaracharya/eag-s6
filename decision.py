@@ -193,7 +193,10 @@ def next_step(
         f"from the 'contents' of the memory item, then DONOT MAKE ANY TOOL CALL FOR READING IT BECAUSE ITS A WASTE OF ITERATION\n\n"
         f"-THE TOOL YOU CALL MUST BE PRESENT IN THE PROVIDED TOOL LIST.\n"
         f"- IF YOU ARE USING A TOOL, ENSURE THAT THE TOOL DESCRIPTION MATCHES WITH WHAT YOU INTEND TO ACHEIVE BY USING THE TOOL\n"
-        f"-DONOT MAKE THE SAME TOOL CALL (WITH SAME ARGUMENTS) TWICE. IT SHOULD BE AT MOST ONCE"
+        f"- FOR CALENDAR REMINDERS, USE CREATE FILE TOOL TO EMULATE CREATING REMINDERS IN A CALENDAR"
+        f"- DONOT MAKE THE SAME TOOL CALL (WITH SAME ARGUMENTS) TWICE. IT SHOULD BE AT MOST ONCE"
+        f"- DONOT SPEND MORE THAN 3 ITERATIONS FOR THE SAME GOAL. Look at the history of executed actions section for the goal. If 3 iterations have already been executed for the same GOAL ID,"
+        f" then, in this iteration, DONOT MAKE ANY TOOL CALL. JUST POPULATE the 'answer' field and populate the answer with the contents present in the USER PROMPT."
         f"- Format the output strictly as a JSON object adhering to the DecisionOutput schema:\n"
         f"{json.dumps(DecisionOutput.model_json_schema())}"
     )
