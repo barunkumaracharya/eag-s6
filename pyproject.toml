@@ -1,0 +1,19 @@
+[project]
+name = "eag-6"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aiohttp>=3.13.5",
+    "crawl4ai>=0.8.6",
+    "ddgs>=9.14.4",
+    "dotenv>=0.9.9",
+    "fastapi>=0.136.1",
+    "future>=1.0.0",
+    "jsonschema>=4.26.0",
+    "mcp[cli]>=1.27.1",
+    "tavily>=1.1.0",
+    "tzdata>=2026.2",
+    "uvicorn>=0.47.0",
+]
