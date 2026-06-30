@@ -1,6 +1,40 @@
 # Agent Runs: Execution Flow and Screenshots
 
-This document contains step-by-step execution flows of Agent6 for different queries.
+This document contains step-by-step execution flows of Agent6 for different queries, as well as instructions for setting up and running the agent.
+
+---
+
+## Getting Started
+
+Follow these steps to set up and run Agent6 on your system:
+
+### 1. Prerequisites
+Ensure you have [uv](https://github.com/astral-sh/uv) installed on your system. If not, install it using:
+```bash
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+### 2. Configure Environment Variables
+Create a `.env` file in the root directory and add the necessary API keys and configuration settings (e.g., `GEMINI_API_KEY`, `TAVILY_API_KEY`, etc.):
+```env
+GEMINI_API_KEY=your_gemini_api_key
+GEMINI_MODEL=gemini-3.1-flash-lite-preview
+LLM_ORDER=gemini,groq
+GATEWAY_PORT=8101
+TAVILY_API_KEY=your_tavily_api_key
+```
+
+### 3. Start the LLM Gateway
+In a terminal window, start the LLM Gateway server to handle model requests:
+```bash
+uv run python llm_gatewayV3/main.py
+```
+
+### 4. Run the Agent
+Open another terminal window and execute the agent with your custom query:
+```bash
+uv run python agent6.py "When is mom's birthday?"
+```
 
 ---
 
